@@ -69,9 +69,11 @@ The `statusQueryGetUri` can be used to query the status of the specified Workflo
 ```
 
 ```typescript
+// Always return a Check Status payload, even if the activity completes very quickly.
 return client.createCheckStatusResponse(context.bindingData.req, instanceId);
 
-// if the workflow completes within the timeout then the starter function returns a 200 OK plus the resulting payload. Otherwise, a 202 Accepted is returned along with the Check Status payload that you can use to inspect and interact with the workflow. See  
+// If the workflow completes within the timeout then the starter function returns a 200 OK plus the resulting payload.
+// Otherwise, a 202 Accepted is returned along with the Check Status payload that you can use to inspect and interact with the workflow.  
 return client.waitForCompletionOrCreateCheckStatusResponse(context.bindingData.req, instanceId, 1000);
 ```
 
