@@ -9,5 +9,10 @@ export interface ActivityInput {
 }
 
 export interface ActivityOutput {
-    sillyName: string;
+    sillyName?: string;
+    sillyFacts?: string;
+}
+
+export interface CatFactsResponse {
+    text: string;
 }
