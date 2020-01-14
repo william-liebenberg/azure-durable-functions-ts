@@ -24,6 +24,9 @@ const orchestrator = df.orchestrator(function* (context) {
             context.df.callActivity("WorkActivity1", activityInput)
         );
     }
+    tasks.push(
+        context.df.callActivity("WorkflowActivityWithAxiosHttpCall"),
+    );
 
     // aggregate the data
     try {

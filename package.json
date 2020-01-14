@@ -17,6 +17,7 @@
     "typescript": "^3.3.3"
   },
   "dependencies": {
+    "axios": "^0.19.1",
     "durable-functions": "^1.3.2"
   }
 }
